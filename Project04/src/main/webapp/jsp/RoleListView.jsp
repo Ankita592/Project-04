@@ -25,6 +25,7 @@
     <form action ="<%= ORSView.ROLE_LIST_CTL %>" method="post">
     
         <jsp:useBean id="bean" class="in.co.rays.bean.RoleBean" scope="request"></jsp:useBean>
+        <input type="hidden" name="id" value="<%=bean.getId() %>">
         
         <div align="center">
             <h1><font color="navy">Role List</font></h1>
@@ -47,7 +48,7 @@
             %>
             
             
-            
+            <input type="hidden" name="id" value="<%=bean.getId() %>">
             <input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
             
@@ -138,6 +139,8 @@
               
         </div>
     </form>
+    <%@include file="Footer.jsp" %>
+	
     
 </body>
 </html>

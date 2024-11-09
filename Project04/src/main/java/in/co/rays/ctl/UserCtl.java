@@ -180,7 +180,8 @@ public class UserCtl extends BaseCtl {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if (OP_RESET.equalsIgnoreCase(op)) {
+		}
+		else if (OP_RESET.equalsIgnoreCase(op)) {
 			ServletUtility.redirect(ORSView.USER_CTL, request, response);
 			return;
 		}

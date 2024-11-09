@@ -15,7 +15,7 @@ public class TestRoleModel {
 		//testAdd();
 		//testUpdate();
 		//testDelete();
-		//testFindByPk();
+		testFindByPk();
 		//testFindByName();
 		//testSearch();
 		
@@ -26,8 +26,8 @@ public class TestRoleModel {
 	
 	{
 		RoleBean bean = new RoleBean();
-		bean.setName("kiosk");
-		bean.setDescription("kiosk");
+		bean.setName("Faculty");
+		bean.setDescription("Facultyy");
 		bean.setCreatedBy("admin@gmail.com");
 		bean.setModifiedBy("admin@gmail.com");
 		bean.setCreatedDateTime(new Timestamp(new Date().getTime()));
@@ -44,8 +44,8 @@ public class TestRoleModel {
 		RoleBean bean = new RoleBean();
 		
 		bean.setId(2);
-		bean.setName("student");
-		bean.setDescription("student");
+		bean.setName("Student");
+		bean.setDescription("studentie");
 		bean.setCreatedBy("admin@gmail.com");
 		bean.setModifiedBy("admin@gmail.com");
 		bean.setCreatedDateTime(new Timestamp(new Date().getTime()));
@@ -62,7 +62,7 @@ public class TestRoleModel {
 	public static void testDelete() throws Exception
 	{
 	RoleModel model = new RoleModel();
-	model.delete(3);
+	model.delete(6);
 	
 		
 	}
@@ -71,7 +71,7 @@ public class TestRoleModel {
 	
 	{
 		RoleModel model = new RoleModel();
-		RoleBean bean = model.findByPk(1);
+		RoleBean bean = model.findByPk(2);
 		
 		if(bean!=null)
 		{

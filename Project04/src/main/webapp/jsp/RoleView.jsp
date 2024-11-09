@@ -13,15 +13,35 @@
 </head>
 <body>
 
-
+   <%@ include file="Header.jsp" %>
 	<form action="<%=ORSView.ROLE_CTL%>" method="post">
     <jsp:useBean id="bean" class="in.co.rays.bean.RoleBean" scope="request"></jsp:useBean>
+    <input type="hidden" name="id" value="<%=bean.getId() %>">
 
     <div align="center">
         <h1>
-            <font color="navy">Add Role</font>
+            <font color="navy"><% if(bean!=null && bean.getId()>0){ %>Update
+            <%} else { %>
+            Add<%} %> Role
+            
+            </font>
+            
         </h1>
-
+        
+        <input type = "hidden" name="id" value= <%=bean.getId() %>">
+        <input type = "hidden" name="createdBy" <%=bean.getCreatedBy() %>">
+        <input type = "hidden" name="createdBy" <%=bean.getModifiedBy() %>">
+        <input type = "hidden" name="createdDatetime" <%=DataUtility.getTimestamp(bean.getCreatedDateTime()) %>">
+         <input type = "hidden" name="modifiedDatetime" <%=DataUtility.getTimestamp(bean.getModifiedDateTime()) %>">
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <table>
             <tr>
                 <th>Name:</th>
@@ -42,15 +62,39 @@
 
             <tr>
                 <th></th>
+                <%
+                if(bean!=null && bean.getId()>0){
+                
+                
+                %>
+                
+                <td align="left" colspan="2"><input type="submit" name="operation" value = "<%=RoleCtl.OP_UPDATE %>">
+                <input type = "submit" name="operation" value="<%=RoleCtl.OP_CANCEL%>">
+                <%}else{ %>
+                
+                
                 <td>
                     <input type="submit" name="operation" value="<%=RoleCtl.OP_SAVE%>"> 
                     &nbsp; 
                     <input type="submit" name="operation" value="<%=RoleCtl.OP_RESET%>">
                 </td>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <%
+                }
+                %>
             </tr>
         </table>
     </div>
 </form>
+<%@include file="Footer.jsp" %>
 	
 </body>
 
